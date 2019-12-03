@@ -23,6 +23,9 @@
         text-align: center;
         background-color: white;
       }
+      #animation-container {
+        height: 475px; /*Static height so the page does not change on animation load*/
+      }
     </style>
   </head>
   <body>
@@ -40,21 +43,20 @@
     <script>
       var $aContainer = document.getElementById("animation-container");
       var aContainerRect = $aContainer.getBoundingClientRect();
-      var start =
-        aContainerRect.top + document.body.getBoundingClientRect().top;
-      var end = aContainerRect.height + 100;
+      var start = aContainerRect.top;
+      var length = aContainerRect.height + 100; //Height of the container plus a offset for better presentation
       scrollAnimate({
         frames: {
           path: "frames/",
           prefix: "frame_",
           extension: "jpg",
           amount: 40,
-          pad: "00" // Optional
+          pad: "00"
         },
         parent: $aContainer,
         scroll: {
           start: start,
-          length: 575
+          length: length
         }
       });
     </script>
