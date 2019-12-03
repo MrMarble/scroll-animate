@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scroll Animate Example 1</title>
+    <script src="/dist/scrollAnimate.min.js"></script>
+    <style>
+      .container {
+        height: 5000px;
+        background-color: rgb(181, 181, 255);
+      }
+      .sticky-container {
+        margin-top: 250px;
+        padding-top: 20px;
+        height: 1600px;
+        background-color: rgb(85, 85, 255);
+      }
+      .sticky {
+        position: sticky;
+        top: 50px;
+        text-align: center;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Page Container of a ugly example</p>
+      <div class="sticky-container">
+        <p>Sticky container</p>
+        <div class="sticky">
+          <p>Sticky</p>
+          <div id="animation-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var $aContainer = document.getElementById("animation-container");
+      var aContainerRect = $aContainer.getBoundingClientRect();
+      var start =
+        aContainerRect.top + document.body.getBoundingClientRect().top;
+      var end = aContainerRect.height + 100;
+      scrollAnimate({
+        frames: {
+          path: "frames/",
+          prefix: "frame_",
+          extension: "jpg",
+          amount: 40,
+          pad: "00" // Optional
+        },
+        parent: $aContainer,
+        scroll: {
+          start: start,
+          length: 575
+        }
+      });
+    </script>
+  </body>
+</html>
