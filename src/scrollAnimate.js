@@ -100,7 +100,7 @@
       return;
     }
     scroll.start = params.scroll.start;
-    scroll.length = params.scroll.length;
+    scroll.length = scroll.start + params.scroll.length;
 
     if (Array.isArray(params.frames)) {
       assets = _downloadAssets(params.frames, _animationStart);
