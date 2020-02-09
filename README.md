@@ -1,5 +1,7 @@
 # scroll-animate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MrMarble/scroll-animate.svg)](https://greenkeeper.io/)
+
 Simple VanillaJS library to create a animation with the scroll as the time-controller
 
 
